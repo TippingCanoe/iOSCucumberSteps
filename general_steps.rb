@@ -51,6 +51,19 @@ Then /^I enter "(.*?)" into "(.*?)"$/ do |text,field|
 	enterTextWithKeyboard(query, text)
 end
 
+Then /^I enter random text into "(.*?)"$/ do |text,field|
+	query = "view marked:'#{field}'"
+	stamp = (Time.now.to_f*1000).to_i.to_s
+	text = "poop" + stamp
+	enterTextWithKeyboard(query, text)
+end
+
+Then /^I enter random email into "(.*?)"$/ do |text,field|
+	query = "view marked:'#{field}'"
+	stamp = (Time.now.to_f*1000).to_i.to_s
+	text = "poop" + stamp + "@poop.com"
+	enterTextWithKeyboard(query, text)
+end
 
 Then /^I wait for the loading flame animation to (start|stop)$/ do |opt|
 
