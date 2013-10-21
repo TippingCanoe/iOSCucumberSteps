@@ -1,3 +1,8 @@
+Given /^the app is running beta$/ do
+  element_exists("This is Beta")
+  sleep(STEP_PAUSE)
+end
+
 Then /^I wait for the text "([^\"]*)" to appear$/ do |text|
 	text = escape_quotes(text)
 	wait_for_elements_exist(["label text:'#{text}'"], :timeout => WAIT_TIMEOUT)
