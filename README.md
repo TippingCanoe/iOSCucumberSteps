@@ -7,9 +7,7 @@ for use with cocoapods
 
 add this to your podfile
 ```
-target 'MyProject-cal', :exclusive => false do
-    pod 'iOSCucumberSteps', :head
-end
+pod 'iOSCucumberSteps', :head
 ```
 and add this to calabash_steps.rb
 
