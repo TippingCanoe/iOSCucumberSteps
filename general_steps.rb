@@ -218,20 +218,6 @@ Then /^I should see that "(.*?)" is scrolled to the top$/ do |view|
 	end
 end
 
-Then /^I touch "(.*?)" with offset (\d+),(\-?\d+)$/ do |view, xOffset, yOffset|
-
-	viewQ = "view marked:'#{view}'"
-	textQ = "label text:'#{view}'"
-
-	query = viewQ
-	
-	if (element_exists(textQ) and not element_exists(viewQ))
-		query = textQ
-	end
-
-	touch (query, :offset =>{:x=>xOffset,:y=>yOffset})
-end
-
 
 Then /^I randomly scroll (up|down|left|right)$/ do |dir| 
 
@@ -301,7 +287,7 @@ def dismissKeyboard
 		touch (closeButton)
 	else
 		if isIpad
-			keyboard_enter_char("Dismiss")
+			keyboard_enter_char("Return")
 		else
 			keyboard_enter_char("Return")
 		end
