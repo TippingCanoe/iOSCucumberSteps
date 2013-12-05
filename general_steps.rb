@@ -218,6 +218,9 @@ Then /^I should see that "(.*?)" is scrolled to the top$/ do |view|
 	end
 end
 
+Then /^I set the device location to "(.*?)","(.*?)"$/ do |lat,long|
+	set_location({:latitude => lat.to_f, :longitude => long.to_f})
+end
 
 Then /^I randomly scroll (up|down|left|right)$/ do |dir| 
 
